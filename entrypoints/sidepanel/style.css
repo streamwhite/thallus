@@ -8,8 +8,7 @@
 body {
   margin: 0;
   min-width: 20rem;
-  background:
-    linear-gradient(180deg, #f7f9fc 0%, #eef2f7 100%);
+  background-color: #ffffff;
 }
 
 #app {
