@@ -29,6 +29,17 @@ import {
 } from '@/lib/extension-identity';
 import { enableOpenSidePanelOnActionClick } from '@/lib/side-panel-behavior';
 import { createPersistWebExtOptions } from '@/lib/web-ext-options';
+import {
+  createDevViteWatchConfig,
+  resolveDevReloadOptions,
+} from '@/lib/dev-reload';
+import {
+  DEFAULT_DEV_RELOAD_COMMAND,
+  DEFAULT_WATCH_DEBOUNCE_MS,
+  DEV_RELOAD_COMMAND_ENV_KEY,
+  WATCH_DEBOUNCE_ENV_KEY,
+  WATCH_POLLING_ENV_KEY,
+} from '@/lib/constants';
 import { prepareDevProfile } from '@/scripts/prepare-dev-profile';
 
 describe('font-size', () => {
@@ -163,5 +174,34 @@ describe('prepare-dev-profile', () => {
     expect(JSON.parse(raw).extensions.pinned_extensions).toContain(
       result.extensionId,
     );
+  });
+});
+
+describe('dev-reload', () => {
+  it('enables HMR-friendly watch defaults for save-triggered reloads', () => {
+    const options = resolveDevReloadOptions({});
+    expect(options.reloadCommand).toBe(DEFAULT_DEV_RELOAD_COMMAND);
+    expect(options.watchDebounceMs).toBe(DEFAULT_WATCH_DEBOUNCE_MS);
+    expect(options.usePolling).toBe(true);
+    expect(createDevViteWatchConfig(options)).toEqual({
+      server: {
+        hmr: true,
+        watch: {
+          usePolling: true,
+          interval: options.pollIntervalMs,
+        },
+      },
+    });
+  });
+
+  it('respects env overrides for reload command and polling', () => {
+    const options = resolveDevReloadOptions({
+      [DEV_RELOAD_COMMAND_ENV_KEY]: 'false',
+      [WATCH_POLLING_ENV_KEY]: 'false',
+      [WATCH_DEBOUNCE_ENV_KEY]: '500',
+    });
+    expect(options.reloadCommand).toBe(false);
+    expect(options.usePolling).toBe(false);
+    expect(options.watchDebounceMs).toBe(500);
   });
 });

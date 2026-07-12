@@ -1,4 +1,8 @@
 import { defineConfig } from 'wxt';
+import {
+  createDevViteWatchConfig,
+  resolveDevReloadOptions,
+} from './lib/dev-reload';
 import { resolveExtensionPublicKey } from './lib/extension-identity';
 import { createPersistWebExtOptions } from './lib/web-ext-options';
 import { prepareDevProfile } from './scripts/prepare-dev-profile';
@@ -6,6 +10,8 @@ import { prepareDevProfile } from './scripts/prepare-dev-profile';
 const EXTENSION_NAME = 'Extension Dev Template';
 const EXTENSION_DESCRIPTION =
   'WXT template for building browser extensions with persistent dev sessions';
+
+const devReload = resolveDevReloadOptions();
 
 export default defineConfig({
   manifest: {
@@ -15,6 +21,10 @@ export default defineConfig({
     key: resolveExtensionPublicKey(),
   },
   webExt: createPersistWebExtOptions(),
+  dev: {
+    reloadCommand: devReload.reloadCommand,
+  },
+  vite: () => createDevViteWatchConfig(devReload),
   hooks: {
     'build:done': async (wxt) => {
       if (wxt.config.command !== 'serve') {

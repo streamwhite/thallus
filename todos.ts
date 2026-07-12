@@ -9,5 +9,6 @@ export const todos = {
     `use bootstrap(instal it no cdn)`,
     `do not show font size on extension icon, use md for it`,
     `remove counter too.`,
+    `ensure in dev mode, each saved changes trigger ext reload(also in browser), like HMR, so i do not have to manually reload ext and reload ext in browser, if possible`,
   ],
 };
