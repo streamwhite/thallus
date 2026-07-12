@@ -1,0 +1,28 @@
+{
+  "name": "extension-dev-template",
+  "description": "WXT template for building browser extensions",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "test": "vitest run",
+    "postinstall": "wxt prepare"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "^5.2.11",
+    "happy-dom": "^20.10.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10",
+    "wxt": "^0.20.27"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  }
+}
