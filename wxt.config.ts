@@ -18,6 +18,7 @@ export default defineConfig({
     name: EXTENSION_NAME,
     description: EXTENSION_DESCRIPTION,
     action: {},
+    permissions: ['downloads'],
     key: resolveExtensionPublicKey(),
   },
   webExt: createPersistWebExtOptions(),

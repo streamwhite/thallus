@@ -1,0 +1,9 @@
+{
+  "download": {
+    "missingUrl": "下载地址不能为空。",
+    "invalidUrl": "仅支持 http 和 https 下载地址。",
+    "fetchFailed": "带登录态的请求失败，状态码 {status}。",
+    "requestFailed": "扩展下载请求失败。",
+    "invalidMessage": "无效的下载请求消息。"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "download": {
+    "missingUrl": "Download URL is required.",
+    "invalidUrl": "Only http and https download URLs are supported.",
+    "fetchFailed": "Authenticated fetch failed with status {status}.",
+    "requestFailed": "Extension download request failed.",
+    "invalidMessage": "Invalid download request message."
+  }
+}
