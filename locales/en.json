@@ -5,5 +5,19 @@
     "fetchFailed": "Authenticated fetch failed with status {status}.",
     "requestFailed": "Extension download request failed.",
     "invalidMessage": "Invalid download request message."
+  },
+  "sidepanel": {
+    "title": "Authenticated download",
+    "description": "Download files through the extension using your logged-in browser session.",
+    "urlLabel": "File URL",
+    "urlPlaceholder": "https://example.com/report.pdf",
+    "filenameLabel": "Filename (optional)",
+    "filenamePlaceholder": "report.pdf",
+    "useCredentialsFetchLabel": "Fetch with session cookies",
+    "useCredentialsFetchDescription": "Request the file with your login session, then save it.",
+    "submit": "Download",
+    "submitting": "Downloading…",
+    "success": "Download started (id {downloadId}).",
+    "failure": "Download failed: {error}"
   }
 }

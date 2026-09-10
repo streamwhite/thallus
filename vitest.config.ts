@@ -5,6 +5,6 @@ export default defineConfig({
   plugins: [WxtVitest()],
   test: {
     environment: 'happy-dom',
-    include: ['lib/**/*.test.ts'],
+    include: ['lib/**/*.test.ts', 'entrypoints/**/*.test.ts'],
   },
 });

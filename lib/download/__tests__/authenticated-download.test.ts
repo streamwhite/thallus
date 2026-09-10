@@ -11,6 +11,8 @@ import {
 } from '@/lib/download/messages';
 import { downloadAuthenticatedFile } from '@/lib/download/download-file';
 import { handleDownloadMessage } from '@/lib/download/handle-download-message';
+import { isSupportedDownloadUrl } from '@/lib/download/download-file';
+import { resolveSupportedLocale } from '@/lib/download/i18n';
 
 describe('authenticated-download', () => {
   it('derives a safe filename from a file url', () => {
@@ -100,5 +102,19 @@ describe('authenticated-download', () => {
       download,
     });
     expect(bad.ok).toBe(false);
+  });
+
+  it('shares url validation rules with the side panel form', () => {
+    expect(isSupportedDownloadUrl('https://example.com/a.png')).toBe(true);
+    expect(isSupportedDownloadUrl('http://example.com/a.png')).toBe(true);
+    expect(isSupportedDownloadUrl('ftp://example.com/a.png')).toBe(false);
+    expect(isSupportedDownloadUrl('example.com/a.png')).toBe(false);
+  });
+
+  it('resolves the supported locale from any browser language tag', () => {
+    expect(resolveSupportedLocale('zh-CN')).toBe('zh');
+    expect(resolveSupportedLocale('en-US')).toBe('en');
+    expect(resolveSupportedLocale('fr-FR')).toBe('en');
+    expect(resolveSupportedLocale(undefined)).toBe('en');
   });
 });

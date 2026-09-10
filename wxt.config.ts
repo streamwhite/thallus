@@ -1,4 +1,5 @@
 import { defineConfig } from 'wxt';
+import tailwindcss from '@tailwindcss/vite';
 import {
   createDevViteWatchConfig,
   resolveDevReloadOptions,
@@ -14,6 +15,7 @@ const EXTENSION_DESCRIPTION =
 const devReload = resolveDevReloadOptions();
 
 export default defineConfig({
+  modules: ['@wxt-dev/module-react'],
   manifest: {
     name: EXTENSION_NAME,
     description: EXTENSION_DESCRIPTION,
@@ -25,7 +27,10 @@ export default defineConfig({
   dev: {
     reloadCommand: devReload.reloadCommand,
   },
-  vite: () => createDevViteWatchConfig(devReload),
+  vite: () => ({
+    ...createDevViteWatchConfig(devReload),
+    plugins: [tailwindcss()],
+  }),
   hooks: {
     'build:done': async (wxt) => {
       if (wxt.config.command !== 'serve') {

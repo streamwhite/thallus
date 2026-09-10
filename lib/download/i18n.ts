@@ -11,7 +11,8 @@ export type DownloadMessageKey = keyof typeof en.download;
 
 const DEFAULT_LOCALE: LocaleCode = 'en';
 
-function resolveLocale(locale?: string): LocaleCode {
+/** Shared with the side panel UI to pick the react-intl catalog. */
+export function resolveSupportedLocale(locale?: string): LocaleCode {
   if (locale?.toLowerCase().startsWith('zh')) {
     return 'zh';
   }
@@ -23,7 +24,7 @@ export function getDownloadErrorMessage(
   vars: Record<string, string> = {},
   locale?: string,
 ): string {
-  const catalog = catalogs[resolveLocale(locale)];
+  const catalog = catalogs[resolveSupportedLocale(locale)];
   let message = catalog.download[key] ?? catalogs.en.download[key];
   for (const [name, value] of Object.entries(vars)) {
     message = message.replaceAll(`{${name}}`, value);

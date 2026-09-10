@@ -10,12 +10,21 @@ import type {
   DownloadRuntime,
 } from './types';
 
+/** Shared with the side panel form so UI and background validate identically. */
+export function isSupportedDownloadUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
 function assertHttpUrl(url: string): URL {
-  const parsed = new URL(url);
-  if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+  if (!isSupportedDownloadUrl(url)) {
     throw new Error(getDownloadErrorMessage('invalidUrl'));
   }
-  return parsed;
+  return new URL(url);
 }
 
 async function downloadViaCredentialsFetch(

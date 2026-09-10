@@ -55,6 +55,8 @@ Dev tooling (used in `wxt.config.ts`): `resolveDevReloadOptions`, `createDevVite
 
 This repo is both the library and a WXT extension that uses it.
 
+Side-panel UI stack: React (`@wxt-dev/module-react`), React Hook Form, React Intl (formatjs), Tailwind CSS v4, and shadcn/ui on Base UI with the default design. UI code lives in `entrypoints/sidepanel/` and `ui/`; add more shadcn components with `pnpm dlx shadcn@latest add <component>`.
+
 ```sh
 pnpm install
 pnpm test        # run vitest

@@ -5,5 +5,19 @@
     "fetchFailed": "带登录态的请求失败，状态码 {status}。",
     "requestFailed": "扩展下载请求失败。",
     "invalidMessage": "无效的下载请求消息。"
+  },
+  "sidepanel": {
+    "title": "带登录态下载",
+    "description": "通过扩展使用浏览器登录态下载文件。",
+    "urlLabel": "文件地址",
+    "urlPlaceholder": "https://example.com/report.pdf",
+    "filenameLabel": "文件名（可选）",
+    "filenamePlaceholder": "report.pdf",
+    "useCredentialsFetchLabel": "使用登录 Cookie 请求",
+    "useCredentialsFetchDescription": "先带登录态请求文件，再保存为文件。",
+    "submit": "下载",
+    "submitting": "下载中…",
+    "success": "下载已开始（编号 {downloadId}）。",
+    "failure": "下载失败：{error}"
   }
 }
