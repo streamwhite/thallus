@@ -1,12 +1,14 @@
-import { handleDownloadMessage } from '@/lib/download/handle-download-message';
-import type { DownloadFileResult } from '@/lib/download/types';
+import { browser } from 'wxt/browser';
+import type { DownloadConflictAction } from './constants';
+import { handleDownloadMessage } from './handle-download-message';
+import type { DownloadFileResult, DownloadRuntime } from './types';
 
-function createBrowserDownloadRuntime() {
+function createBrowserDownloadRuntime(): DownloadRuntime {
   return {
     download: (options: {
       url: string;
       filename?: string;
-      conflictAction?: 'uniquify' | 'overwrite' | 'prompt';
+      conflictAction?: DownloadConflictAction;
       saveAs?: boolean;
     }) => browser.downloads.download(options),
   };

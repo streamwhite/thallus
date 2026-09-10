@@ -1,13 +1,13 @@
-import { downloadAuthenticatedFile } from '@/lib/download/download-file';
-import { getDownloadErrorMessage } from '@/lib/download/i18n';
+import { downloadAuthenticatedFile } from './download-file';
+import { getDownloadErrorMessage } from './i18n';
 import {
   isDownloadRequestMessage,
   parseDownloadRequest,
-} from '@/lib/download/messages';
+} from './messages';
 import type {
   DownloadFileResult,
   DownloadRuntime,
-} from '@/lib/download/types';
+} from './types';
 
 export async function handleDownloadMessage(
   message: unknown,

@@ -1,4 +1,4 @@
-import type { DownloadConflictAction } from '@/lib/download/constants';
+import type { DownloadConflictAction } from './constants';
 
 export type DownloadFileRequest = {
   url: string;

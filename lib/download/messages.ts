@@ -6,11 +6,11 @@ import {
   DOWNLOAD_SAVE_AS_ENV_KEY,
   DOWNLOAD_USE_CREDENTIALS_FETCH_ENV_KEY,
   type DownloadConflictAction,
-} from '@/lib/download/constants';
+} from './constants';
 import type {
   DownloadFileRequest,
   DownloadRequestMessage,
-} from '@/lib/download/types';
+} from './types';
 
 function parseBoolean(value: string | undefined, fallback: boolean): boolean {
   if (value == null || value.trim().length === 0) {

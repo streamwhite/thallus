@@ -1,9 +1,10 @@
-import { createDownloadRequestMessage } from '@/lib/download/messages';
-import { getDownloadErrorMessage } from '@/lib/download/i18n';
+import { browser } from 'wxt/browser';
+import { createDownloadRequestMessage } from './messages';
+import { getDownloadErrorMessage } from './i18n';
 import type {
   DownloadFileRequest,
   DownloadFileResult,
-} from '@/lib/download/types';
+} from './types';
 
 export async function requestAuthenticatedDownload(
   request: DownloadFileRequest,

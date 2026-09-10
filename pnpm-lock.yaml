@@ -7,14 +7,16 @@ settings:
 importers:
 
   .:
-    dependencies:
-      bootstrap:
-        specifier: ^5.3.8
-        version: 5.3.8(@popperjs/core@2.11.8)
     devDependencies:
       '@types/bootstrap':
         specifier: ^5.2.11
         version: 5.2.11
+      '@types/node':
+        specifier: ^26.1.1
+        version: 26.1.1
+      bootstrap:
+        specifier: ^5.3.8
+        version: 5.3.8(@popperjs/core@2.11.8)
       happy-dom:
         specifier: ^20.10.6
         version: 20.10.6

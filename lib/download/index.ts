@@ -1,15 +1,15 @@
-export { DOWNLOAD_MESSAGE_TYPE } from '@/lib/download/constants';
-export { downloadAuthenticatedFile } from '@/lib/download/download-file';
-export { deriveFilenameFromUrl } from '@/lib/download/filename';
-export { handleDownloadMessage } from '@/lib/download/handle-download-message';
+export { DOWNLOAD_MESSAGE_TYPE } from './constants';
+export { downloadAuthenticatedFile } from './download-file';
+export { deriveFilenameFromUrl } from './filename';
+export { handleDownloadMessage } from './handle-download-message';
 export {
   createDownloadRequestMessage,
   isDownloadRequestMessage,
   parseDownloadRequest,
-} from '@/lib/download/messages';
-export { registerAuthenticatedDownloadHandler } from '@/lib/download/register-handler';
-export { requestAuthenticatedDownload } from '@/lib/download/request-download';
+} from './messages';
+export { registerAuthenticatedDownloadHandler } from './register-handler';
+export { requestAuthenticatedDownload } from './request-download';
 export type {
   DownloadFileRequest,
   DownloadFileResult,
-} from '@/lib/download/types';
+} from './types';

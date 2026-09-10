@@ -1,14 +1,14 @@
-import { deriveFilenameFromUrl } from '@/lib/download/filename';
-import { getDownloadErrorMessage } from '@/lib/download/i18n';
+import { deriveFilenameFromUrl } from './filename';
+import { getDownloadErrorMessage } from './i18n';
 import {
   resolveDefaultConflictAction,
   resolveDefaultSaveAs,
   resolveDefaultUseCredentialsFetch,
-} from '@/lib/download/messages';
+} from './messages';
 import type {
   DownloadFileRequest,
   DownloadRuntime,
-} from '@/lib/download/types';
+} from './types';
 
 function assertHttpUrl(url: string): URL {
   const parsed = new URL(url);

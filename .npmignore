@@ -1,0 +1,25 @@
+# Packing rules for npm/pnpm (replaces .gitignore when packing).
+# NOTE: do NOT ignore dist/ — it is the published library output.
+node_modules
+.output
+.wxt
+stats.html
+stats-*.json
+*.log
+logs
+.env
+.env.*
+keys/
+entrypoints
+public
+scripts
+locales
+lib
+plans
+tests
+vitest.config.ts
+wxt.config.ts
+tsconfig.json
+tsconfig.lib.json
+todos.ts
+pnpm-lock.yaml

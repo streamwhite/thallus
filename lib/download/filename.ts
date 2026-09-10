@@ -1,4 +1,4 @@
-import { DEFAULT_DOWNLOAD_FILENAME } from '@/lib/download/constants';
+import { DEFAULT_DOWNLOAD_FILENAME } from './constants';
 
 export function deriveFilenameFromUrl(url: string): string {
   try {
