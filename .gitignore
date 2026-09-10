@@ -16,6 +16,7 @@ stats-*.json
 web-ext.config.ts
 .env.local
 .env.*.local
+.npmrc
 keys/
 
 # Editor directories and files
