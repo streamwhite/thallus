@@ -15,6 +15,7 @@ export const todos = {
     `change ui stack: react, React Hook Form,
   i18n
 React Intl formatjs, tailwind, do not use bootstrap, shadcn/ui(use baseui default designs, do not keep current design)`,
+    ``,
   ],
 
   new: [],

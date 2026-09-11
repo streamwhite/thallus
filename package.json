@@ -1,6 +1,6 @@
 {
   "name": "extension-dev-template",
-  "description": "WXT browser extension library and dev template: authenticated downloads, side-panel behavior, and persistent dev profiles",
+  "description": "WXT based browser extension library and dev template: authenticated downloads, side-panel behavior, and persistent dev profiles",
   "version": "0.3.0",
   "type": "module",
   "sideEffects": false,
